@@ -80,8 +80,8 @@ def pay_fine(present_book):
    borrowed_date=present_book["borrow_date"]
    difference=now-borrowed_date
    day_difference=abs(difference.days)
-   if day_difference>3:
-      fine=(day_difference-3)*amount
+   if day_difference>borrowing_limit:
+      fine=(day_difference-borrowing_limit)*amount
    else:
       fine=0
    return fine
